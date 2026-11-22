@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Yusif Vəzir Çəmənzəminlinin həyatı, fəaliyyəti və ədəbi yaradıcılığı haqqında rəqəmsal ədəbiyyat arxivi.">
+
+  <title>Yusif Vəzir Çəmənzəminli | Ədəbi İrs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --burgundy: #783F46;
+      --dark: #342B2A;
+      --cream: #F5E9E8;
+      --paper: #FBF8F3;
+      --muted: #8D7773;
+      --line: #E7D9D5;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--dark);
+      font-family: 'Lato', sans-serif;
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      background: var(--paper);
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--burgundy);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--dark);
+      font-size: 13px;
+      transition: color .3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--burgundy);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 590px;
+      background: var(--cream);
+      display: flex;
+      align-items: center;
+      padding: 80px 10%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 760px;
+      animation: appear 1s ease;
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.15;
+      font-weight: 500;
+      color: var(--burgundy);
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 590px;
+      font-size: 16px;
+      color: #655653;
+      margin-bottom: 35px;
+    }
+
+    .hero-button {
+      display: inline-block;
+      background: var(--burgundy);
+      color: white;
+      text-decoration: none;
+      padding: 13px 28px;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: .3s;
+    }
+
+    .hero-button:hover {
+      background: var(--dark);
+      transform: translateY(-3px);
+    }
+
+    .hero-decoration {
+      position: absolute;
+      right: 8%;
+      bottom: 10%;
+      font-family: 'Playfair Display', serif;
+      font-size: 180px;
+      color: rgba(120, 63, 70, .07);
+      pointer-events: none;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 85px 10%;
+      scroll-margin-top: 75px;
+    }
+
+    .section-label {
+      color: var(--burgundy);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 39px;
+      font-weight: 500;
+      margin-bottom: 25px;
+      color: var(--dark);
+    }
+
+    .intro {
+      max-width: 780px;
+      color: #756763;
+      font-size: 16px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: var(--paper);
+    }
+
+    .about-content {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .portrait-placeholder {
+      min-height: 330px;
+      background: #E9DCD5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--burgundy);
+      text-align: center;
+      padding: 30px;
+      border: 1px solid var(--line);
+    }
+
+    .portrait-placeholder span {
+      font-family: 'Playfair Display', serif;
+      font-size: 65px;
+      opacity: .5;
+    }
+
+    .portrait-placeholder small {
+      font-size: 12px;
+      margin-top: 12px;
+    }
+
+    /* CARDS */
+
+    .activity {
+      background: #F0E5E1;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background: var(--paper);
+      padding: 30px;
+      border: 1px solid var(--line);
+      transition: .3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(52, 43, 42, .08);
+    }
+
+    .card-number {
+      font-family: 'Playfair Display', serif;
+      font-size: 35px;
+      color: #B58C8B;
+    }
+
+    .card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 21px;
+      color: var(--burgundy);
+      margin: 15px 0;
+    }
+
+    .card p {
+      color: #756763;
+      font-size: 14px;
+    }
+
+    /* WORKS */
+
+    .works {
+      background: var(--paper);
+    }
+
+    .work-card {
+      background: white;
+      border-left: 4px solid var(--burgundy);
+      padding: 27px 30px;
+      margin-top: 20px;
+      transition: .3s;
+    }
+
+    .work-card:hover {
+      transform: translateX(5px);
+    }
+
+    .work-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--burgundy);
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+
+    .work-card p {
+      color: #756763;
+      font-size: 14px;
+    }
+
+    /* SOURCES */
+
+    .sources {
+      background: var(--cream);
+    }
+
+    .source-note {
+      border: 1px solid var(--line);
+      padding: 30px;
+      margin-top: 25px;
+      background: rgba(255,255,255,.45);
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--dark);
+      color: #EADDD8;
+      padding: 45px 10%;
+      text-align: center;
+    }
+
+    footer h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: #C7B8B2;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .nav-links {
+        gap: 12px;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+      }
+
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-decoration {
+        font-size: 100px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero {
+        padding: 65px 7%;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+
+      .section-title {
+        font-size: 31px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav>
+      <a href="#" class="logo">YVÇ.</a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Ana səhifə</a></li>
+        <li><a href="#about">Həyatı</a></li>
+        <li><a href="#activity">Fəaliyyəti</a></li>
+        <li><a href="#literature">Yaradıcılığı</a></li>
+        <li><a href="#works">Əsərləri</a></li>
+        <li><a href="#sources">Mənbələr</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <div class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">Azərbaycan ədəbiyyatının görkəmli nümayəndəsi</div>
+
+        <h1>Yusif Vəzir<br>Çəmənzəminli</h1>
+
+        <p>
+          Yazıçı, diplomat, publisist və ictimai xadim.
+          Onun həyatına, fəaliyyətinə və zəngin ədəbi irsinə
+          həsr olunmuş rəqəmsal ədəbiyyat arxivi.
+        </p>
+
+        <a href="#about" class="hero-button">TANIŞ OLUN</a>
+      </div>
+
+      <div class="hero-decoration">Ə</div>
+    </div>
+
+    <section class="about" id="about">
+      <div class="about-content">
+
+        <div>
+          <div class="section-label">01 — Bioqrafiya</div>
+          <h2 class="section-title">Həyatı</h2>
+
+          <p class="intro">
+            Yusif Vəzir Çəmənzəminli Azərbaycan ədəbiyyatında
+            özünəməxsus yeri olan yazıçı və ictimai xadimdir.
+            Onun həyat yolu, təhsili, dünyagörüşü və yaşadığı
+            dövr yaradıcılığının formalaşmasında mühüm rol
+            oynamışdır.
+          </p>
+        </div>
+
+        <div class="portrait-placeholder">
+          <span>YVÇ</span>
+          <small>Müəllifin tarixi portreti burada yerləşdiriləcək</small>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="activity" id="activity">
+      <div class="section-label">02 — İctimai fəaliyyət</div>
+      <h2 class="section-title">İctimai və siyasi fəaliyyəti</h2>
+
+      <p class="intro">
+        Yusif Vəzir Çəmənzəminlinin fəaliyyəti yalnız
+        ədəbiyyatla məhdudlaşmamışdır. O, müxtəlif sahələrdə
+        çalışmış, dövrünün ictimai və siyasi həyatında iştirak etmişdir.
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="card-number">01</div>
+          <h3>Diplomatik fəaliyyət</h3>
+          <p>Onun diplomatik fəaliyyəti və dövlətçilik tariximizdəki rolu.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">02</div>
+          <h3>İctimai fəaliyyət</h3>
+          <p>Cəmiyyətin inkişafı və milli məsələlərlə bağlı fəaliyyəti.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-number">03</div>
+          <h3>Publisistika</h3>
+          <p>Məqalələri, düşüncələri və ictimai mövzulara münasibəti.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="literature">
+      <div class="section-label">03 — Ədəbi irs</div>
+      <h2 class="section-title">Ədəbi yaradıcılığı</h2>
+
+      <p class="intro">
+        Yazıçının yaradıcılığında Azərbaycan xalqının tarixi,
+        milli-mənəvi dəyərləri, cəmiyyətin problemləri və
+        insan münasibətləri mühüm yer tutur.
+        Onun ədəbi irsi müxtəlif janrları əhatə edir.
+      </p>
+    </section>
+
+    <section class="works" id="works">
+      <div class="section-label">04 — Biblioqrafiya</div>
+      <h2 class="section-title">Əsərləri</h2>
+
+      <p class="intro">
+        Bu bölmədə Yusif Vəzir Çəmənzəminlinin
+        müxtəlif janrlarda qələmə aldığı əsərlər təqdim olunacaq.
+      </p>
+
+      <div class="work-card">
+        <h3>Gələcək şəhər</h3>
+        <p>
+          Əsər haqqında məlumat, qısa məzmun,
+          mövzu, ideya və ədəbi təhlil.
+        </p>
+      </div>
+
+      <div class="work-card">
+        <h3>Digər əsərləri</h3>
+        <p>
+          Yazıçının digər romanları, hekayələri,
+          povestləri və ədəbi irsi haqqında məlumatlar
+          burada yerləşdiriləcək.
+        </p>
+      </div>
+    </section>
+
+    <section class="sources" id="sources">
+      <div class="section-label">05 — İstinadlar</div>
+      <h2 class="section-title">Mənbələr</h2>
+
+      <p class="intro">
+        Saytın hazırlanması zamanı istifadə olunan
+        kitablar, elmi məqalələr, arxiv materialları
+        və etibarlı elektron mənbələr.
+      </p>
+
+      <div class="source-note">
+        Mənbələr və biblioqrafik məlumatlar
+        araşdırma əsasında əlavə ediləcək.
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <h3>Yusif Vəzir Çəmənzəminli</h3>
+    <p>Azərbaycan ədəbiyyatının zəngin irsinə həsr olunmuş layihə.</p>
+    <p style="margin-top:15px;">© 2026 | Ədəbi İrs</p>
+  </footer>
+
+</body>
+</html>
