@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Yusif Vəzir Çəmənzəminlinin həyatı, fəaliyyəti və ədəbi yaradıcılığı haqqında rəqəmsal ədəbiyyat arxivi.">
+  <meta name="description" content="Yusif Vəzir Çəmənzəminlinin həyatı, ictimai-siyasi fəaliyyəti, ədəbi yaradıcılığı və əsərləri haqqında elmi əsaslı rəqəmsal arxiv.">
 
   <title>Yusif Vəzir Çəmənzəminli | Ədəbi İrs</title>
 
@@ -15,11 +15,14 @@
   <style>
     :root {
       --burgundy: #783F46;
+      --burgundy-dark: #542D33;
       --dark: #342B2A;
       --cream: #F5E9E8;
       --paper: #FBF8F3;
-      --muted: #8D7773;
+      --rose: #E9DCD5;
+      --muted: #81716D;
       --line: #E7D9D5;
+      --white: #FFFFFF;
     }
 
     * {
@@ -33,46 +36,56 @@
       background: var(--paper);
       color: var(--dark);
       font-family: 'Lato', sans-serif;
-      line-height: 1.7;
+      line-height: 1.8;
+    }
+
+    a {
+      color: inherit;
     }
 
     /* NAVIGATION */
 
     header {
-      background: var(--paper);
-      border-bottom: 1px solid var(--line);
       position: sticky;
       top: 0;
       z-index: 100;
+      background: rgba(251,248,243,.97);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
     nav {
-      max-width: 1200px;
+      max-width: 1250px;
       margin: auto;
-      padding: 18px 6%;
+      min-height: 78px;
+      padding: 15px 6%;
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 19px;
       color: var(--burgundy);
+      font-size: 24px;
       font-weight: 700;
       text-decoration: none;
+      white-space: nowrap;
     }
 
     .nav-links {
       display: flex;
-      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 22px;
       list-style: none;
     }
 
     .nav-links a {
-      text-decoration: none;
       color: var(--dark);
-      font-size: 13px;
+      text-decoration: none;
+      font-size: 12px;
       transition: color .3s;
     }
 
@@ -83,99 +96,115 @@
     /* HERO */
 
     .hero {
-      min-height: 590px;
+      min-height: 570px;
+      padding: 100px 10%;
       background: var(--cream);
       display: flex;
       align-items: center;
-      padding: 80px 10%;
       position: relative;
       overflow: hidden;
     }
 
     .hero-content {
-      max-width: 760px;
+      max-width: 790px;
+      position: relative;
+      z-index: 2;
       animation: appear 1s ease;
     }
 
     .eyebrow {
       color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 4px;
       font-size: 11px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 4px;
       margin-bottom: 25px;
     }
 
     .hero h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(42px, 7vw, 76px);
-      line-height: 1.15;
-      font-weight: 500;
       color: var(--burgundy);
+      font-size: clamp(45px, 7vw, 78px);
+      font-weight: 500;
+      line-height: 1.15;
       margin-bottom: 25px;
     }
 
     .hero p {
-      max-width: 590px;
-      font-size: 16px;
+      max-width: 610px;
       color: #655653;
+      font-size: 16px;
       margin-bottom: 35px;
     }
 
     .hero-button {
       display: inline-block;
+      padding: 14px 29px;
       background: var(--burgundy);
       color: white;
       text-decoration: none;
-      padding: 13px 28px;
-      font-size: 13px;
+      font-size: 12px;
       letter-spacing: 1px;
       transition: .3s;
     }
 
     .hero-button:hover {
-      background: var(--dark);
+      background: var(--burgundy-dark);
       transform: translateY(-3px);
     }
 
     .hero-decoration {
       position: absolute;
-      right: 8%;
-      bottom: 10%;
+      right: 7%;
+      bottom: 4%;
       font-family: 'Playfair Display', serif;
-      font-size: 180px;
-      color: rgba(120, 63, 70, .07);
+      font-size: 250px;
+      color: rgba(120,63,70,.055);
       pointer-events: none;
+    }
+
+    .hero-years {
+      margin-top: 28px;
+      color: var(--burgundy);
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      letter-spacing: 3px;
     }
 
     /* GENERAL SECTIONS */
 
     section {
       padding: 85px 10%;
-      scroll-margin-top: 75px;
+      scroll-margin-top: 85px;
     }
 
     .section-label {
       color: var(--burgundy);
-      text-transform: uppercase;
-      letter-spacing: 3px;
       font-size: 11px;
       font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
       margin-bottom: 12px;
     }
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 39px;
+      font-size: clamp(31px, 4vw, 43px);
       font-weight: 500;
-      margin-bottom: 25px;
       color: var(--dark);
+      line-height: 1.3;
+      margin-bottom: 24px;
     }
 
     .intro {
-      max-width: 780px;
-      color: #756763;
-      font-size: 16px;
+      max-width: 850px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
     }
 
     /* ABOUT */
@@ -185,112 +214,325 @@
     }
 
     .about-content {
+      max-width: 900px;
+    }
+
+    .about-content p {
+      margin-bottom: 17px;
+    }
+
+    .about-note {
+      margin-top: 30px;
+      padding: 24px 28px;
+      background: var(--cream);
+      border-left: 3px solid var(--burgundy);
+      color: #655653;
+      font-size: 14px;
+    }
+
+    /* BIOGRAPHY FACTS */
+
+    .facts {
       display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 65px;
-      align-items: center;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 45px;
     }
 
-    .portrait-placeholder {
-      min-height: 330px;
-      background: #E9DCD5;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      color: var(--burgundy);
-      text-align: center;
-      padding: 30px;
-      border: 1px solid var(--line);
+    .fact {
+      padding: 25px;
+      background: var(--white);
+      border-top: 2px solid var(--burgundy);
     }
-.portrait-placeholder img {
-  width: 100%;
-  max-width: 350px;
-  height: 380px;
-  object-fit: contain;
-  display: block;
-}
-    .portrait-placeholder span {
+
+    .fact strong {
+      display: block;
       font-family: 'Playfair Display', serif;
-      font-size: 65px;
-      opacity: .5;
+      font-size: 29px;
+      color: var(--burgundy);
+      margin-bottom: 5px;
     }
 
-    .portrait-placeholder small {
-      font-size: 12px;
-      margin-top: 12px;
+    .fact span {
+      color: var(--muted);
+      font-size: 13px;
     }
 
-    /* CARDS */
+    /* TIMELINE */
+
+    .timeline {
+      background: var(--cream);
+    }
+
+    .timeline-intro {
+      max-width: 750px;
+      color: var(--muted);
+      margin-bottom: 40px;
+      font-size: 15px;
+    }
+
+    .timeline-list {
+      max-width: 850px;
+      margin-top: 35px;
+      border-left: 2px solid #C9A6A3;
+      padding-left: 35px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 35px 10px;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -43px;
+      top: 8px;
+      width: 14px;
+      height: 14px;
+      background: var(--burgundy);
+      border: 3px solid var(--cream);
+      border-radius: 50%;
+    }
+
+    .timeline-year {
+      color: var(--burgundy);
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .timeline-item h3 {
+      color: var(--dark);
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 500;
+      margin: 4px 0 5px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 700px;
+    }
+
+    /* ACTIVITY */
 
     .activity {
       background: #F0E5E1;
     }
 
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
+    .activity-block {
       margin-top: 40px;
     }
 
-    .card {
-      background: var(--paper);
-      padding: 30px;
-      border: 1px solid var(--line);
-      transition: .3s;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(52, 43, 42, .08);
-    }
-
-    .card-number {
+    .activity-block h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 35px;
-      color: #B58C8B;
-    }
-
-    .card h3 {
-      font-family: 'Playfair Display', serif;
-      font-size: 21px;
       color: var(--burgundy);
-      margin: 15px 0;
+      font-size: 25px;
+      font-weight: 500;
+      margin-bottom: 13px;
     }
 
-    .card p {
+    .activity-block p {
       color: #756763;
+      font-size: 15px;
+      max-width: 950px;
+    }
+
+    .activity-block ul {
+      margin: 15px 0 0 22px;
+      color: #756763;
+      font-size: 14px;
+    }
+
+    .activity-block li {
+      padding: 4px 0;
+    }
+
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .activity-card {
+      padding: 27px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+    }
+
+    .activity-card span {
+      color: #B58C8B;
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+    }
+
+    .activity-card h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--burgundy);
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    .activity-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* LITERATURE */
+
+    .literature {
+      background: var(--paper);
+    }
+
+    .literature-content {
+      max-width: 900px;
+    }
+
+    .literature-content p {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .theme-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      margin-top: 35px;
+    }
+
+    .theme-card {
+      padding: 25px;
+      background: var(--cream);
+      border-left: 3px solid var(--burgundy);
+    }
+
+    .theme-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--burgundy);
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .theme-card p {
+      color: var(--muted);
       font-size: 14px;
     }
 
     /* WORKS */
 
     .works {
-      background: var(--paper);
+      background: #F0E5E1;
+    }
+
+    .works-intro {
+      max-width: 850px;
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    .work-category {
+      margin-top: 45px;
+    }
+
+    .work-category h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 27px;
+      color: var(--burgundy);
+      font-weight: 500;
+      padding-bottom: 12px;
+      border-bottom: 1px solid #D8C3BE;
+      margin-bottom: 20px;
     }
 
     .work-card {
-      background: white;
-      border-left: 4px solid var(--burgundy);
-      padding: 27px 30px;
-      margin-top: 20px;
+      background: var(--paper);
+      padding: 25px 28px;
+      margin-bottom: 15px;
+      border-left: 3px solid var(--burgundy);
       transition: .3s;
     }
 
     .work-card:hover {
-      transform: translateX(5px);
+      transform: translateX(4px);
+      box-shadow: 0 8px 20px rgba(52,43,42,.05);
     }
 
-    .work-card h3 {
+    .work-card h4 {
       font-family: 'Playfair Display', serif;
       color: var(--burgundy);
-      font-size: 22px;
-      margin-bottom: 8px;
+      font-size: 20px;
+      margin-bottom: 7px;
     }
 
     .work-card p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .work-date {
+      display: inline-block;
+      margin-top: 10px;
+      color: #9B7775;
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .disputed-note {
+      margin-top: 35px;
+      padding: 25px 28px;
+      background: #F8F0E8;
+      border: 1px solid #D9C5B8;
+    }
+
+    .disputed-note h4 {
+      font-family: 'Playfair Display', serif;
+      color: var(--burgundy);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .disputed-note p {
       color: #756763;
+      font-size: 14px;
+    }
+
+    /* RESEARCH */
+
+    .research {
+      background: var(--paper);
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .research-card {
+      padding: 27px;
+      background: var(--cream);
+    }
+
+    .research-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: var(--burgundy);
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .research-card p {
+      color: var(--muted);
       font-size: 14px;
     }
 
@@ -300,11 +542,43 @@
       background: var(--cream);
     }
 
-    .source-note {
+    .source-intro {
+      max-width: 800px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .source-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .source-item {
+      background: var(--paper);
       border: 1px solid var(--line);
-      padding: 30px;
-      margin-top: 25px;
-      background: rgba(255,255,255,.45);
+      padding: 23px 27px;
+    }
+
+    .source-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      color: var(--burgundy);
+      margin-bottom: 6px;
+    }
+
+    .source-item p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 10px;
+    }
+
+    .source-item a {
+      color: var(--burgundy);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: underline;
+      overflow-wrap: anywhere;
     }
 
     /* FOOTER */
@@ -312,27 +586,30 @@
     footer {
       background: var(--dark);
       color: #EADDD8;
-      padding: 45px 10%;
       text-align: center;
+      padding: 50px 10%;
     }
 
     footer h3 {
       font-family: 'Playfair Display', serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 400;
       margin-bottom: 10px;
     }
 
     footer p {
-      font-size: 12px;
       color: #C7B8B2;
+      font-size: 12px;
     }
+
+    /* ANIMATION */
 
     @keyframes appear {
       from {
         opacity: 0;
         transform: translateY(20px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -342,45 +619,71 @@
     /* MOBILE */
 
     @media (max-width: 850px) {
-      .nav-links {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: flex-end;
+      nav {
+        flex-direction: column;
+        padding: 15px 5%;
       }
 
-      .nav-links a {
-        font-size: 11px;
+      .nav-links {
+        justify-content: center;
+        gap: 12px 18px;
       }
 
       .about-content {
         grid-template-columns: 1fr;
       }
 
-      .cards {
+      .facts {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .activity-grid,
+      .theme-grid,
+      .research-grid {
         grid-template-columns: 1fr;
       }
 
       .hero-decoration {
-        font-size: 100px;
+        font-size: 130px;
       }
     }
 
-    @media (max-width: 500px) {
-      nav {
-        flex-direction: column;
-        gap: 12px;
-      }
-
+    @media (max-width: 550px) {
       .hero {
-        padding: 65px 7%;
+        min-height: 490px;
+        padding: 70px 7%;
       }
 
       section {
         padding: 60px 7%;
       }
 
+      .nav-links a {
+        font-size: 11px;
+      }
+
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
       .section-title {
         font-size: 31px;
+      }
+
+      .timeline-list {
+        padding-left: 25px;
+      }
+
+      .timeline-item::before {
+        left: -33px;
+      }
+
+      .work-card {
+        padding: 22px;
+      }
+
+      footer {
+        padding: 40px 7%;
       }
     }
   </style>
@@ -388,159 +691,1029 @@
 
 <body>
 
-  <header>
-    <nav>
-      <a href="#" class="logo">YVÇ.</a>
+<header>
+  <nav>
+    <a href="#home" class="logo">YVÇ.</a>
 
-      <ul class="nav-links">
-        <li><a href="#home">Ana səhifə</a></li>
-        <li><a href="#about">Həyatı</a></li>
-        <li><a href="#activity">Fəaliyyəti</a></li>
-        <li><a href="#literature">Yaradıcılığı</a></li>
-        <li><a href="#works">Əsərləri</a></li>
-        <li><a href="#sources">Mənbələr</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#home">Ana səhifə</a></li>
+      <li><a href="#about">Həyatı</a></li>
+      <li><a href="#timeline">Xronologiya</a></li>
+      <li><a href="#activity">Fəaliyyəti</a></li>
+      <li><a href="#literature">Yaradıcılığı</a></li>
+      <li><a href="#works">Əsərləri</a></li>
+      <li><a href="#sources">Mənbələr</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main>
+<main>
 
-    <div class="hero" id="home">
-      <div class="hero-content">
-        <div class="eyebrow">Azərbaycan ədəbiyyatının görkəmli nümayəndəsi</div>
+  <!-- HERO -->
 
-        <h1>Yusif Vəzir<br>Çəmənzəminli</h1>
+  <div class="hero" id="home">
+    <div class="hero-content">
 
-        <p>
-          Yazıçı, diplomat, publisist və ictimai xadim.
-          Onun həyatına, fəaliyyətinə və zəngin ədəbi irsinə
-          həsr olunmuş rəqəmsal ədəbiyyat arxivi.
-        </p>
-
-        <a href="#about" class="hero-button">TANIŞ OLUN</a>
+      <div class="eyebrow">
+        Azərbaycan ədəbiyyatı · Tarix · Dövlətçilik
       </div>
 
-      <div class="hero-decoration">Ə</div>
+      <h1>Yusif Vəzir<br>Çəmənzəminli</h1>
+
+      <p>
+        Yazıçı, publisist, dramaturq, ədəbiyyatşünas
+        və diplomat. Azərbaycan xalqının tarixini,
+        milli kimliyini və ictimai həyatını öz
+        yaradıcılığında əks etdirən çoxşaxəli şəxsiyyət.
+      </p>
+
+      <a href="#about" class="hero-button">
+        HƏYATI İLƏ TANIŞ OLUN
+      </a>
+
+      <div class="hero-years">1887 — 1943</div>
+
     </div>
 
-    <section class="about" id="about">
+    <div class="hero-decoration">Ə</div>
+  </div>
+
+
+  <!-- BIOGRAPHY -->
+
+  <section class="about" id="about">
+
+    <div class="container">
+
+      <div class="section-label">01 — Bioqrafiya</div>
+
+      <h2 class="section-title">Həyatı və şəxsiyyəti</h2>
+
       <div class="about-content">
 
-        <div>
-          <div class="section-label">01 — Bioqrafiya</div>
-          <h2 class="section-title">Həyatı</h2>
+        <p class="intro">
+          Yusif Mirbaba oğlu Vəzirov, ədəbi fəaliyyəti
+          zamanı Yusif Vəzir Çəmənzəminli adı ilə
+          tanınmış, 1887-ci il sentyabrın 12-də
+          Şuşa şəhərində anadan olmuşdur.
 
-          <p class="intro">
-            Yusif Vəzir Çəmənzəminli Azərbaycan ədəbiyyatında
-            özünəməxsus yeri olan yazıçı və ictimai xadimdir.
-            Onun həyat yolu, təhsili, dünyagörüşü və yaşadığı
-            dövr yaradıcılığının formalaşmasında mühüm rol
-            oynamışdır.
+          O, Azərbaycan realist nəsrinin, tarixi roman
+          janrının və publisistikasının inkişafında
+          mühüm rol oynamışdır. Yazıçının dünyagörüşünün
+          formalaşmasında ailəsi, Şuşanın ədəbi mühiti,
+          aldığı təhsil və yaşadığı dövrün ictimai-siyasi
+          hadisələri xüsusi əhəmiyyət daşımışdır.
+        </p>
+
+        <p class="intro">
+          İlk təhsilini Şuşada alan Yusif Vəzir sonralar
+          Bakıda təhsilini davam etdirmiş, 1910-cu ildə
+          Kiyev Universitetinin hüquq fakültəsinə daxil
+          olmuş və 1915-ci ildə universiteti bitirmişdir.
+          Tələbəlik illəri onun həm ədəbi, həm də ictimai
+          fəaliyyətinin inkişafında mühüm mərhələ olmuşdur.
+        </p>
+
+        <p class="intro">
+          O, müxtəlif dövrlərdə Azərbaycan, Krım, Türkiyə,
+          Fransa və Özbəkistanda yaşamış, müəllim, redaktor,
+          tədqiqatçı və diplomat kimi fəaliyyət göstərmişdir.
+          Bu təcrübələr onun əsərlərindəki tarixi, sosial
+          və mədəni mövzuların zənginləşməsinə təsir etmişdir.
+        </p>
+
+        <div class="about-note">
+          Yusif Vəzir Çəmənzəminli 1940-cı ildə repressiyaya
+          məruz qalaraq həbs edilmiş, 1943-cü il yanvarın
+          3-də həbs düşərgəsində vəfat etmişdir.
+          1956-cı ildə ona bəraət verilmişdir.
+        </div>
+
+      </div>
+
+      <div class="facts">
+
+        <div class="fact">
+          <strong>1887</strong>
+          <span>Şuşada anadan olub</span>
+        </div>
+
+        <div class="fact">
+          <strong>1915</strong>
+          <span>Kiyev Universitetini bitirib</span>
+        </div>
+
+        <div class="fact">
+          <strong>1943</strong>
+          <span>Həbs düşərgəsində vəfat edib</span>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TIMELINE -->
+
+  <section class="timeline" id="timeline">
+
+    <div class="container">
+
+      <div class="section-label">02 — Tarixi xronologiya</div>
+
+      <h2 class="section-title">Həyatının əsas mərhələləri</h2>
+
+      <p class="timeline-intro">
+        Yazıçının həyat və fəaliyyətində mühüm yer
+        tutan hadisələr, təhsil illərindən başlayaraq
+        ədəbi, diplomatik və elmi fəaliyyətinə qədər.
+      </p>
+
+      <div class="timeline-list">
+
+        <div class="timeline-item">
+          <div class="timeline-year">1887</div>
+          <h3>Şuşada doğuluşu</h3>
+          <p>
+            Sentyabrın 12-də Şuşa şəhərində Yusif
+            Mirbaba oğlu Vəzirov dünyaya gəlir.
           </p>
         </div>
 
-       <div class="portrait-placeholder">
-  <img src="./images.webp" alt="Yusif Vəzir Çəmənzəminli">
-</div>
+        <div class="timeline-item">
+          <div class="timeline-year">1896</div>
+          <h3>Təhsil illərinin başlanğıcı</h3>
+          <p>
+            Şuşada təhsilini davam etdirir və
+            ədəbiyyata marağı getdikcə artır.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1906</div>
+          <h3>Ədəbi fəaliyyətə başlanğıc</h3>
+          <p>
+            Mətbuatda ilk yazıları ilə çıxış etməyə
+            başlayır. Sonrakı illərdə «Molla Nəsrəddin»
+            jurnalı ilə əməkdaşlıq edir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1910</div>
+          <h3>Kiyev Universiteti</h3>
+          <p>
+            Müqəddəs Vladimir adına Kiyev İmperator
+            Universitetinin hüquq fakültəsinə daxil olur.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1915</div>
+          <h3>Ali təhsilini başa vurması</h3>
+          <p>
+            Kiyev Universitetinin hüquq fakültəsini bitirir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1917</div>
+          <h3>İctimai-siyasi fəaliyyət</h3>
+          <p>
+            Kiyevdə Azərbaycan milli hərəkatında iştirak edir.
+            «Azərbaycan muxtariyyəti» əsəri nəşr olunur.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1919</div>
+          <h3>İstanbula diplomatik missiya</h3>
+          <p>
+            Azərbaycan Xalq Cümhuriyyətinin Osmanlı
+            Türkiyəsində ilk diplomatik nümayəndəsi,
+            səfir kimi fəaliyyət göstərmək üçün
+            İstanbula göndərilir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1921–1922</div>
+          <h3>Elmi və tədqiqat əsərləri</h3>
+          <p>
+            «Azərbaycan ədəbiyyatına bir nəzər» və
+            «Tarixi, coğrafi və iqtisadi Azərbaycan»
+            kitabları İstanbulda nəşr olunur.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1923</div>
+          <h3>Paris dövrü</h3>
+          <p>
+            Fransaya gedir, Paris yaxınlığında yaşayır,
+            əmək fəaliyyəti ilə məşğul olur və
+            publisistik yazılarını davam etdirir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1926</div>
+          <h3>Vətənə qayıdış</h3>
+          <p>
+            Aprelin 3-də Azərbaycana qayıdır.
+            Nəşriyyat və təhsil sahələrində çalışır,
+            bədii və elmi yaradıcılığını davam etdirir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1934</div>
+          <h3>«Qızlar bulağı» romanı</h3>
+          <p>
+            Tarixi-fəlsəfi romanı nəşr olunur.
+            Əsər qədim cəmiyyət, insan və xalqın
+            mənşəyi məsələlərinə həsr edilir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1937</div>
+          <h3>Repressiya təhlükəsinin artması</h3>
+          <p>
+            İşdən uzaqlaşdırılır və ədəbi fəaliyyətinə
+            qarşı təzyiqlər güclənir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1940</div>
+          <h3>Həbs olunması</h3>
+          <p>
+            Yanvar ayında Ürgəncdə həbs edilərək
+            Bakıya gətirilir, daha sonra həbs
+            düşərgəsinə göndərilir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1943</div>
+          <h3>Vəfatı</h3>
+          <p>
+            Yanvarın 3-də həbs düşərgəsində
+            həyatını itirir.
+          </p>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-year">1956</div>
+          <h3>Hüquqi bəraət</h3>
+          <p>
+            Yusif Vəzir Çəmənzəminliyə
+            ölümündən sonra bəraət verilir.
+          </p>
+        </div>
 
       </div>
-    </section>
 
-    <section class="activity" id="activity">
-      <div class="section-label">02 — İctimai fəaliyyət</div>
-      <h2 class="section-title">İctimai və siyasi fəaliyyəti</h2>
+    </div>
+
+  </section>
+
+
+  <!-- ACTIVITY -->
+
+  <section class="activity" id="activity">
+
+    <div class="container">
+
+      <div class="section-label">03 — İctimai və siyasi fəaliyyət</div>
+
+      <h2 class="section-title">Ədəbiyyatdan diplomatiyaya</h2>
 
       <p class="intro">
         Yusif Vəzir Çəmənzəminlinin fəaliyyəti yalnız
-        ədəbiyyatla məhdudlaşmamışdır. O, müxtəlif sahələrdə
-        çalışmış, dövrünün ictimai və siyasi həyatında iştirak etmişdir.
+        bədii yaradıcılıqla məhdudlaşmamışdır. O,
+        Azərbaycan dövlətçiliyinin formalaşdığı dövrdə
+        siyasi və diplomatik proseslərdə iştirak etmiş,
+        elmi, pedaqoji və mədəni sahələrdə də çalışmışdır.
       </p>
 
-      <div class="cards">
+      <div class="activity-block">
 
-        <div class="card">
-          <div class="card-number">01</div>
-          <h3>Diplomatik fəaliyyət</h3>
-          <p>Onun diplomatik fəaliyyəti və dövlətçilik tariximizdəki rolu.</p>
+        <h3>1. Milli və siyasi fəaliyyət</h3>
+
+        <p>
+          1917-ci ildə Kiyevdə olduğu müddətdə Azərbaycan
+          milli hərəkatında fəal iştirak etmişdir.
+          Müsavat Partiyasının Kiyev şöbəsinin yaradılması
+          və Azərbaycan koloniyasının siyasi fəaliyyətinin
+          təşkilində rol oynamışdır.
+        </p>
+
+        <p>
+          Həmin dövrdə Azərbaycanın muxtariyyəti və
+          milli özünüidarəsi məsələlərinə xüsusi
+          diqqət yetirmişdir. 1917-ci ildə nəşr olunan
+          «Azərbaycan muxtariyyəti» kitabında bu
+          mövqeyini ifadə etmişdir.
+        </p>
+
+      </div>
+
+      <div class="activity-block">
+
+        <h3>2. Diplomatik fəaliyyəti</h3>
+
+        <p>
+          1919-cu ildə Azərbaycan Xalq Cümhuriyyətinin
+          diplomatik nümayəndəsi kimi İstanbula
+          göndərilmişdir. O, Cümhuriyyətin Osmanlı
+          Türkiyəsində ilk səfiri olmuşdur.
+        </p>
+
+        <p>
+          Diplomatik fəaliyyətinin əsas istiqamətlərindən
+          biri Azərbaycanı xarici ölkələrdə tanıtmaq,
+          ölkənin müstəqilliyi və beynəlxalq əlaqələri
+          ilə bağlı məsələləri təmsil etmək idi.
+        </p>
+
+      </div>
+
+      <div class="activity-block">
+
+        <h3>3. Publisistik fəaliyyəti</h3>
+
+        <p>
+          Çəmənzəminli dövrünün aktual ictimai və siyasi
+          məsələlərinə dair məqalələr yazmışdır.
+          1919-cu ildə «Azərbaycan» qəzetində
+          «Xarici siyasətimiz» başlığı altında
+          silsilə yazıları dərc olunmuşdur.
+        </p>
+
+        <ul>
+          <li>«Xarici siyasətimiz: Beynəlmiləl əlaqə»</li>
+          <li>«Xarici siyasətimiz: Bolşevik qurğusu»</li>
+          <li>«Xarici siyasətimiz: Denikin qurğusu»</li>
+          <li>«Xarici siyasətimiz: Elçilər göndərməlidir»</li>
+          <li>«Xarici siyasətimiz: Ermənistan və biz»</li>
+          <li>«Milli və mədəni işlərimiz»</li>
+        </ul>
+
+      </div>
+
+      <div class="activity-block">
+
+        <h3>4. Elmi və pedaqoji fəaliyyəti</h3>
+
+        <p>
+          Azərbaycana qayıtdıqdan sonra nəşriyyatlarda
+          redaktor kimi çalışmış, ali təhsil
+          müəssisələrində dərs demişdir.
+          Azərbaycan Dövlət Universitetində,
+          Pedaqoji, Tibb və Neft institutlarında
+          pedaqoji fəaliyyət göstərmişdir.
+        </p>
+
+        <p>
+          1930–1935-ci illərdə Azərbaycan Neft
+          İnstitutunda çalışmış, dil, ədəbiyyat,
+          tarix və folklor məsələlərinə dair
+          elmi və publisistik yazılar hazırlamışdır.
+          O, həmçinin «Rusca-Azərbaycanca lüğət»in
+          müəlliflərindən biri olmuşdur.
+        </p>
+
+      </div>
+
+      <div class="activity-grid">
+
+        <div class="activity-card">
+          <span>01</span>
+          <h4>Diplomatiya</h4>
+          <p>
+            Azərbaycan Xalq Cümhuriyyətinin
+            xarici əlaqələrinin təmsil olunması.
+          </p>
         </div>
 
-        <div class="card">
-          <div class="card-number">02</div>
-          <h3>İctimai fəaliyyət</h3>
-          <p>Cəmiyyətin inkişafı və milli məsələlərlə bağlı fəaliyyəti.</p>
+        <div class="activity-card">
+          <span>02</span>
+          <h4>Milli hərəkat</h4>
+          <p>
+            Azərbaycanın milli muxtariyyəti və
+            siyasi gələcəyi ilə bağlı fəaliyyət.
+          </p>
         </div>
 
-        <div class="card">
-          <div class="card-number">03</div>
-          <h3>Publisistika</h3>
-          <p>Məqalələri, düşüncələri və ictimai mövzulara münasibəti.</p>
+        <div class="activity-card">
+          <span>03</span>
+          <h4>Publisistika</h4>
+          <p>
+            Siyasi, ictimai, milli və mədəni
+            məsələlərə dair məqalələr.
+          </p>
+        </div>
+
+        <div class="activity-card">
+          <span>04</span>
+          <h4>Elm və təhsil</h4>
+          <p>
+            Tədqiqatçılıq, müəllimlik,
+            redaktorluq və lüğətçilik.
+          </p>
         </div>
 
       </div>
-    </section>
 
-    <section id="literature">
-      <div class="section-label">03 — Ədəbi irs</div>
+    </div>
+
+  </section>
+
+
+  <!-- LITERATURE -->
+
+  <section class="literature" id="literature">
+
+    <div class="container">
+
+      <div class="section-label">04 — Ədəbi irs</div>
+
       <h2 class="section-title">Ədəbi yaradıcılığı</h2>
 
-      <p class="intro">
-        Yazıçının yaradıcılığında Azərbaycan xalqının tarixi,
-        milli-mənəvi dəyərləri, cəmiyyətin problemləri və
-        insan münasibətləri mühüm yer tutur.
-        Onun ədəbi irsi müxtəlif janrları əhatə edir.
-      </p>
-    </section>
+      <div class="literature-content">
 
-    <section class="works" id="works">
-      <div class="section-label">04 — Biblioqrafiya</div>
+        <p>
+          Yusif Vəzir Çəmənzəminli XX əsr Azərbaycan
+          ədəbiyyatının çoxşaxəli nümayəndələrindən biridir.
+          Onun yaradıcılığı hekayə, roman, komediya,
+          kinossenari, publisistika və elmi-tədqiqat
+          əsərlərini əhatə edir.
+        </p>
+
+        <p>
+          Yazıçı bədii əsərlərində real həyat hadisələrinə,
+          cəmiyyətin sosial münasibətlərinə, milli kimlik
+          məsələlərinə və tarixi yaddaşa geniş yer vermişdir.
+          Xüsusilə, Azərbaycan xalqının tarixi və Qarabağın
+          keçmişi onun yaradıcılığında mühüm mövzulardandır.
+        </p>
+
+        <p>
+          Çəmənzəminlinin hekayələrində gündəlik həyat,
+          ailə münasibətləri, qadınların cəmiyyətdəki
+          vəziyyəti, sosial ədalətsizlik və insan
+          xarakterləri realist yanaşma ilə təqdim olunur.
+        </p>
+
+        <p>
+          Tarixi romanlarında isə keçmiş dövrlərin
+          siyasi və ictimai münasibətlərini bədii
+          obrazlar vasitəsilə canlandırır. Bu əsərlərdə
+          tarixi faktlar, xalqın məişəti və milli
+          özünüdərk məsələləri bir-biri ilə əlaqələndirilir.
+        </p>
+
+      </div>
+
+      <div class="theme-grid">
+
+        <div class="theme-card">
+          <h3>Tarixi yaddaş</h3>
+          <p>
+            Azərbaycan xalqının keçmişi, Qarabağ xanlığı,
+            tarixi şəxsiyyətlər və milli yaddaş.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Sosial problemlər</h3>
+          <p>
+            Cəmiyyətdəki bərabərsizlik, sosial
+            münasibətlər və ictimai ədalətsizlik.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Qadın və cəmiyyət</h3>
+          <p>
+            Qadınların hüquqları, ailə münasibətləri
+            və dövrün sosial məhdudiyyətləri.
+          </p>
+        </div>
+
+        <div class="theme-card">
+          <h3>Milli kimlik</h3>
+          <p>
+            Xalqın mənşəyi, milli-mənəvi dəyərlər,
+            dil, mədəniyyət və özünüdərk.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WORKS -->
+
+  <section class="works" id="works">
+
+    <div class="container">
+
+      <div class="section-label">05 — Biblioqrafiya</div>
+
       <h2 class="section-title">Əsərləri</h2>
 
-      <p class="intro">
-        Bu bölmədə Yusif Vəzir Çəmənzəminlinin
-        müxtəlif janrlarda qələmə aldığı əsərlər təqdim olunacaq.
+      <p class="works-intro">
+        Yusif Vəzir Çəmənzəminlinin ədəbi irsi
+        müxtəlif janrları əhatə edir. Aşağıda
+        onun əsas romanları, hekayələri, dramaturji,
+        publisistik və elmi əsərləri janrlar üzrə
+        təqdim olunur.
       </p>
 
-      <div class="work-card">
-        <h3>Gələcək şəhər</h3>
-        <p>
-          Əsər haqqında məlumat, qısa məzmun,
-          mövzu, ideya və ədəbi təhlil.
-        </p>
+
+      <!-- NOVELS -->
+
+      <div class="work-category">
+
+        <h3>Romanları</h3>
+
+        <div class="work-card">
+          <h4>Bir cavanın dəftəri</h4>
+          <p>
+            Gündəlik formasında yazılmış, məktəbli
+            Muradın 1905-ci ilin yay tətili günlərini
+            əks etdirən əsərdir. Yazıçı şəxsi
+            müşahidələri tarixi hadisələrlə
+            əlaqələndirmişdir.
+          </p>
+          <span class="work-date">Roman · 1914-cü ildən yazılmağa başlanıb</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Studentlər</h4>
+          <p>
+            Əvvəlki variantı «Günah» adlanan roman
+            Kiyevdə təhsil alan azərbaycanlı tələbələrin
+            həyatını, dünyagörüşünü, məişətini və
+            ictimai münasibətlərini təsvir edir.
+            Əsərin ikinci kitabı «1917-ci ildə»
+            adlanır.
+          </p>
+          <span class="work-date">Roman · 1931, 1935–1936-cı illərdə nəşr mərhələləri</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Qızlar bulağı</h4>
+          <p>
+            Azərbaycan ədəbiyyatının ilk tarixi-fəlsəfi
+            roman nümunələrindən biri hesab olunur.
+            Əsərdə qədim cəmiyyət, xalqın mənşəyi,
+            insanın arzuları və ictimai münasibətlər
+            bədii şəkildə araşdırılır.
+          </p>
+          <span class="work-date">Tarixi-fəlsəfi roman · 1934</span>
+        </div>
+
+        <div class="work-card">
+          <h4>İki od arasında</h4>
+          <p>
+            Qarabağ xanlığının XVIII əsrin sonu və
+            XIX əsrin əvvəllərindəki ictimai-siyasi
+            vəziyyətini əks etdirən tarixi romandır.
+            Əsərin mərkəzində Molla Pənah Vaqif,
+            İbrahim xan və dövrün mürəkkəb siyasi
+            münasibətləri dayanır. Əsər «Qan içində»
+            adı ilə də nəşr olunmuşdur.
+          </p>
+          <span class="work-date">Tarixi roman · 1936–1937</span>
+        </div>
+
       </div>
 
-      <div class="work-card">
-        <h3>Digər əsərləri</h3>
-        <p>
-          Yazıçının digər romanları, hekayələri,
-          povestləri və ədəbi irsi haqqında məlumatlar
-          burada yerləşdiriləcək.
-        </p>
-      </div>
-    </section>
 
-    <section class="sources" id="sources">
-      <div class="section-label">05 — İstinadlar</div>
-      <h2 class="section-title">Mənbələr</h2>
+      <!-- STORIES -->
+
+      <div class="work-category">
+
+        <h3>Hekayələri və hekayə topluları</h3>
+
+        <div class="work-card">
+          <h4>Saqqalunun xeyir işi</h4>
+          <p>
+            Yazıçının ilk hekayəsi kimi
+            Azərbaycan Milli Kitabxanasının
+            biblioqrafiyasında qeyd olunur.
+          </p>
+          <span class="work-date">Hekayə · 1907</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Məlik Məmməd</h4>
+          <p>
+            Azərbaycan xalq nağılının yazıçı
+            tərəfindən işlənmiş variantıdır.
+            Əsər onun erkən yaradıcılıq
+            nümunələri sırasındadır.
+          </p>
+          <span class="work-date">1911</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Qanlı göz yaşları</h4>
+          <p>
+            Yazıçının erkən dövr hekayələrindən
+            biridir. Həmin dövrün nəşrlərində
+            əsərləri arasında yer alır.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h4>Son bahar</h4>
+          <p>
+            Yazıçının ailə, insan taleyi və
+            şəxsi xatirələrlə əlaqəli mövzulara
+            müraciət etdiyi hekayələrindəndir.
+            Əsərdə müəllifin qardaşının vaxtsız
+            vəfatının təsiri də əks olunur.
+          </p>
+          <span class="work-date">1912</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Zeynal bəy</h4>
+          <p>
+            Dövrün ictimai münasibətlərini və
+            çarizm dövründəki sosial problemləri
+            əks etdirən hekayələrindəndir.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h4>Xanın qəzəbi</h4>
+          <p>
+            Yazıçının hekayə yaradıcılığında
+            yer alan əsərlərindən biridir.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h4>Cənnətin qəbzi</h4>
+          <p>
+            Erkən yaradıcılıq dövründə qələmə
+            aldığı və sonrakı hekayə toplularında
+            yer alan əsərlərindəndir.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h4>Gələcək şəhər</h4>
+          <p>
+            Yazıçının hekayə yaradıcılığına aid
+            nümunələrdən biridir. Eyniadlı nəşr
+            Azərbaycan Milli Kitabxanasının
+            biblioqrafiyasında 1933-cü ildə
+            Daşkənddə özbək dilində nəşr olunmuş
+            kitab kimi də qeyd edilir.
+          </p>
+          <span class="work-date">Hekayə və eyniadlı nəşr · 1933-cü il biblioqrafik qeydi</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Digər hekayələri</h4>
+          <p>
+            «Ağsaqqal», «Divanə», «Müsəlman arvadının
+            sərgüzəşti», «Toy», «Borclu», «Dərdli
+            Züleyxa», «Üç gecə», «Qazanc yolunda»,
+            «Qayınananın oyunları», «Polis paltosu»
+            və başqa hekayələri.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- DRAMA -->
+
+      <div class="work-category">
+
+        <h3>Dramaturgiya və kinossenarilər</h3>
+
+        <div class="work-card">
+          <h4>Həzrəti-Şəhriyar</h4>
+          <p>
+            Yeddi şəkildən ibarət komediyadır.
+            Yazıçı əsərdə ictimai münasibətləri,
+            dövrün düşüncə tərzini və yalançı
+            millətpərvərlik məsələlərini
+            bədii şəkildə təqdim edir.
+          </p>
+          <span class="work-date">Komedya · 1935</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Altunsaç</h4>
+          <p>
+            Yazıçının kinossenarilərindən biridir.
+            Azərbaycan Milli Kitabxanasının
+            biblioqrafiyasında 1937-ci ilə
+            aid edilir.
+          </p>
+          <span class="work-date">Kinossenari · 1937</span>
+        </div>
+
+      </div>
+
+
+      <!-- SCIENTIFIC AND PUBLICISTIC -->
+
+      <div class="work-category">
+
+        <h3>Elmi, tarixi və publisistik əsərləri</h3>
+
+        <div class="work-card">
+          <h4>Azərbaycan muxtariyyəti</h4>
+          <p>
+            Azərbaycanın milli muxtariyyəti və
+            siyasi gələcəyi məsələlərinə həsr
+            olunmuş ictimai-siyasi əsərdir.
+          </p>
+          <span class="work-date">1917</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Azərbaycan ədəbiyyatına bir nəzər</h4>
+          <p>
+            Azərbaycan ədəbiyyatının tarixi
+            inkişafını araşdıran elmi əsərdir.
+            Kitabda ədəbiyyata tarixi-müqayisəli
+            yanaşma tətbiq olunmuşdur.
+          </p>
+          <span class="work-date">1921</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Tarixi, coğrafi və iqtisadi Azərbaycan</h4>
+          <p>
+            Azərbaycanın tarixi, coğrafiyası,
+            iqtisadiyyatı və milli xüsusiyyətləri
+            haqqında elmi-tədqiqat əsəridir.
+          </p>
+          <span class="work-date">1922</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Litva tatarlarının tarixi</h4>
+          <p>
+            Litva tatarlarının tarixinə həsr
+            olunmuş tədqiqat əsəridir.
+          </p>
+          <span class="work-date">1919</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Qulluq və əsirlik</h4>
+          <p>
+            Yazıçının ədəbi baxışlarını,
+            dil və ədəbiyyat məsələlərinə
+            münasibətini əks etdirən əsərdir.
+          </p>
+          <span class="work-date">1914</span>
+        </div>
+
+        <div class="work-card">
+          <h4>Ana və analıq</h4>
+          <p>
+            Yazıçının qadın, ailə və cəmiyyət
+            məsələlərinə toxunduğu publisistik
+            yazılarındandır.
+          </p>
+        </div>
+
+        <div class="work-card">
+          <h4>Arvadlarımızın halı</h4>
+          <p>
+            Azərbaycan qadınlarının ictimai
+            vəziyyətinə və cəmiyyətdəki
+            problemlərinə həsr olunmuş
+            publisistik yazıdır.
+          </p>
+        </div>
+
+      </div>
+
+
+      <!-- AUTHORSHIP QUESTION -->
+
+      <div class="disputed-note">
+
+        <h4>Əli və Nino — müəlliflik məsələsi</h4>
+
+        <p>
+          «Əli və Nino» romanının müəllifliyi
+          ədəbiyyatşünaslıqda mübahisəli məsələlərdən
+          biridir. Yusif Vəzir Çəmənzəminlinin
+          adı bu romanın müəllifliyi ilə bağlı
+          irəli sürülən əsas versiyalardan biridir.
+          Lakin müəlliflik məsələsi yekdil şəkildə
+          həll edilmədiyinə görə əsər onun
+          təsdiqlənmiş əsərləri sırasında
+          təqdim edilmir.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESEARCH AND CONTRIBUTION -->
+
+  <section class="research">
+
+    <div class="container">
+
+      <div class="section-label">06 — Ədəbi və elmi irsin əhəmiyyəti</div>
+
+      <h2 class="section-title">Azərbaycan mədəniyyətində yeri</h2>
 
       <p class="intro">
-        Saytın hazırlanması zamanı istifadə olunan
-        kitablar, elmi məqalələr, arxiv materialları
-        və etibarlı elektron mənbələr.
+        Yusif Vəzir Çəmənzəminlinin fəaliyyəti
+        Azərbaycan ədəbiyyatının və ictimai
+        fikrinin müxtəlif istiqamətlərinin
+        inkişafı ilə sıx bağlıdır.
       </p>
 
-      <div class="source-note">
-        Mənbələr və biblioqrafik məlumatlar
-        araşdırma əsasında əlavə ediləcək.
+      <div class="research-grid">
+
+        <div class="research-card">
+          <h3>Realist nəsrin inkişafı</h3>
+          <p>
+            Hekayələrində gündəlik həyatın,
+            sosial problemlərin və insan
+            xarakterlərinin realist təsvirini
+            yaratmışdır.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Tarixi roman ənənəsi</h3>
+          <p>
+            «Qızlar bulağı» və «İki od arasında»
+            romanlarında tarixi hadisələri və
+            milli yaddaşı bədii şəkildə
+            canlandırmışdır.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Folklor və tarix araşdırmaları</h3>
+          <p>
+            Xalq yaradıcılığı, tarixi mənbələr,
+            milli mədəniyyət və etnoqrafiya
+            məsələlərinə diqqət yetirmişdir.
+          </p>
+        </div>
+
+        <div class="research-card">
+          <h3>Milli düşüncə və dövlətçilik</h3>
+          <p>
+            Azərbaycan muxtariyyəti, müstəqillik,
+            diplomatik münasibətlər və milli
+            kimlik məsələlərində iştirak etmişdir.
+          </p>
+        </div>
+
       </div>
-    </section>
 
-  </main>
+    </div>
 
-  <footer>
-    <h3>Yusif Vəzir Çəmənzəminli</h3>
-    <p>Azərbaycan ədəbiyyatının zəngin irsinə həsr olunmuş layihə.</p>
-    <p style="margin-top:15px;">© 2026 | Ədəbi İrs</p>
-  </footer>
+  </section>
+
+
+  <!-- SOURCES -->
+
+  <section class="sources" id="sources">
+
+    <div class="container">
+
+      <div class="section-label">07 — Elmi istinadlar</div>
+
+      <h2 class="section-title">İstifadə olunan mənbələr</h2>
+
+      <p class="source-intro">
+        Saytda təqdim olunan bioqrafik, tarixi və
+        ədəbi məlumatların hazırlanmasında aşağıdakı
+        rəsmi və elmi-biblioqrafik mənbələrdən
+        istifadə edilmişdir. Əsərlərin adları,
+        nəşr məlumatları və yaradıcılıq istiqamətləri
+        xüsusilə Milli Kitabxananın biblioqrafik
+        göstəricisi əsasında yoxlanılmışdır.
+      </p>
+
+      <div class="source-list">
+
+        <div class="source-item">
+          <h3>1. Azərbaycan Milli Kitabxanası</h3>
+          <p>
+            Yusif Vəzir Çəmənzəminli: Biblioqrafiya.
+            Bakı, 2017. Həyatı, yaradıcılığı,
+            əsərlərinin siyahısı və ictimai-siyasi
+            fəaliyyəti haqqında fundamental
+            biblioqrafik göstərici.
+          </p>
+          <a href="https://anl.az/down/chemenzeminli.pdf" target="_blank" rel="noopener">
+            Biblioqrafiyanı oxu
+          </a>
+        </div>
+
+        <div class="source-item">
+          <h3>2. Azərbaycan Respublikası Prezident Kitabxanası</h3>
+          <p>
+            Dövlət xadimi və yazıçı Yusif Vəzir
+            Çəmənzəminli. Diplomatik fəaliyyəti,
+            həyatının əsas mərhələləri, repressiya
+            dövrü və yaradıcılığı haqqında məlumat.
+          </p>
+          <a href="https://preslib.az/az/historical/page/EKjuBAr" target="_blank" rel="noopener">
+            Mənbəyə keçid
+          </a>
+        </div>
+
+        <div class="source-item">
+          <h3>3. Yusif Vəzir Çəmənzəminli — Əsərləri, II cild</h3>
+          <p>
+            Avrasiya Press, Bakı, 2005.
+            «Studentlər», «Qızlar bulağı» və
+            «İki od arasında» romanlarının
+            daxil olduğu nəşr.
+          </p>
+          <a href="https://www.anl.az/el/alf4/chyv_e2.pdf" target="_blank" rel="noopener">
+            Əsərlərin elektron nəşri
+          </a>
+        </div>
+
+        <div class="source-item">
+          <h3>4. Prezident Kitabxanası — Əsərləri</h3>
+          <p>
+            Yusif Vəzir Çəmənzəminlinin
+            üçcildlik əsərlərinin ikinci cildi
+            haqqında biblioqrafik məlumat.
+          </p>
+          <a href="https://www.preslib.az/az/book/Kvv7ttfjDOSY1A6" target="_blank" rel="noopener">
+            Biblioqrafik məlumat
+          </a>
+        </div>
+
+        <div class="source-item">
+          <h3>5. AZƏRTAC — Uşaq Bilik Portalı</h3>
+          <p>
+            Yazıçının həyatı, fəaliyyəti və
+            məşhur əsərləri haqqında ensiklopedik
+            məlumat.
+          </p>
+          <a href="https://portal.azertag.az/az/encyclopedia/post/2021" target="_blank" rel="noopener">
+            Mənbəyə keçid
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <h3>Yusif Vəzir Çəmənzəminli</h3>
+
+  <p>
+    Həyatı · İctimai fəaliyyəti · Ədəbi yaradıcılığı · Əsərləri
+  </p>
+
+  <p style="margin-top:18px;">
+    Elmi və ədəbi irsin tədqiqinə həsr olunmuş
+    rəqəmsal layihə.
+  </p>
+
+  <p style="margin-top:15px;">
+    © 2026 | Ədəbi İrs
+  </p>
+
+</footer>
 
 </body>
 </html>
